@@ -1,3 +1,5 @@
+require_relative 'transaction'
+
 class Account
 
   attr_reader :balance, :trans_log
@@ -22,12 +24,12 @@ class Account
 
   def log_deposit(amount)
     deposit = @trans_class.new(credit: amount, debit: 0, balance: @balance).display_info
-    @trans_log.push deposit
+    @trans_log.insert(0, deposit)
   end
 
   def log_withdrawal(amount)
     withdrawal = @trans_class.new(credit: 0, debit: amount, balance: @balance).display_info
-    @trans_log.push withdrawal
+    @trans_log.insert(0, withdrawal)
   end
 
 end

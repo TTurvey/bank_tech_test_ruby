@@ -11,7 +11,6 @@ describe Transaction do
       transaction = Transaction.new(credit: 100, debit: 0, balance: 100)
       expect(transaction.display_info).to eq(display1)
     end
-
   end
 
 end
