@@ -1,10 +1,10 @@
 class Transaction
 
-  def initialize(date = Time.now.strftime('%d/%m/%Y'), amount)
+  def initialize(date = Time.now.strftime('%d/%m/%Y'), credit: nil, debit: nil, balance: nil)
     @date = date
-    @credit = 0
-    @debit = 0
-    @balance = 0
+    @credit = credit
+    @debit = debit
+    @balance = balance
   end
 
   def display_info
