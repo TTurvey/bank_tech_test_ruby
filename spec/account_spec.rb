@@ -1,11 +1,11 @@
+# frozen_string_literal: true
+
 require './lib/account'
 
 describe Account do
-
   let(:date) { Time.now.strftime('%d/%m/%Y') }
   let(:display1) { "#{date} || 100 || 0 || 100" }
   let(:display2) { "#{date} || 0 || 100 || -100" }
-
 
   describe '#initialize' do
     it 'creates an account with a balance of zero' do

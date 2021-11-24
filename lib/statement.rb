@@ -1,8 +1,9 @@
+# frozen_string_literal: true
+
 require_relative 'account'
 
 class Statement
-
-  STATEMENT_HEADER = "date || credit || debit || balance"
+  STATEMENT_HEADER = 'date || credit || debit || balance'
 
   def initialize(account = Account)
     @account = account
@@ -12,5 +13,4 @@ class Statement
     print STATEMENT_HEADER
     print @account.trans_log
   end
-
 end

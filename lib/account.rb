@@ -1,7 +1,8 @@
+# frozen_string_literal: true
+
 require_relative 'transaction'
 
 class Account
-
   attr_reader :balance, :trans_log
 
   STARTING_BALANCE = 0
@@ -31,5 +32,4 @@ class Account
     withdrawal = @trans_class.new(credit: 0, debit: amount, balance: @balance).display_info
     @trans_log.insert(0, withdrawal)
   end
-
 end

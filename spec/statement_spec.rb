@@ -1,13 +1,15 @@
+# frozen_string_literal: true
+
 require './lib/account'
 require './lib/statement'
 
 describe Statement do
   let(:date) { Time.now.strftime('%d/%m/%Y') }
-  let(:statement1) {
-    "date || credit || debit || balance"
+  let(:statement1) do
+    'date || credit || debit || balance'
     "#{date} || 0 || 50 || 50"
     "#{date} || 100 || 0 || 100"
-  }
+  end
 
   describe '#print_statement' do
     it '' do
@@ -18,5 +20,4 @@ describe Statement do
       expect(statement.print_statement).to eq(statement1)
     end
   end
-
 end

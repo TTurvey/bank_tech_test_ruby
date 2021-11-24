@@ -24,5 +24,49 @@ date || credit || debit || balance
 ```
 ---
 
-## Self-assessment
-Once you have completed the challenge and feel happy with your solution, here's a form to help you reflect on the quality of your code: https://docs.google.com/forms/d/1Q-NnqVObbGLDHxlvbUfeAC7yBCf3eCjTmz6GOqC9Aeo/edit
+### Approach and Structure:
+I have chosen to structure the app in a way that uses three classes, Account, Transactions and Statement. It made sense to me to do it this way as a bank account can have many transactions but each transaction should be unique and so transactions should be a seperate class. An account should also have a statement which is just a print out of all of the transactions and so should be it's own class too, responsible for all formatting of the statement.
+
+---
+
+### How to run the app:
+
+Make a clone of this repository.
+```
+git clone https://github.com/TTurvey/bank_tech_test_ruby.git
+```
+
+Install gems with:
+```
+bundle install
+```
+
+Start IRB:
+```
+irb
+```
+
+In IRB, you can peform the following:
+```
+require './lib/account.rb'
+account = Account.new
+account.deposit(<pick any amount you choose>)
+account.withdraw(<pick any amount you choose>)
+statement = Statement.new
+statement.print_statement
+```
+See below a screenshot of these commands in action.
+![screenshot](./images/app_screenshot.png)
+
+<br/>
+
+You can run the tests with:
+```
+rspec
+```
+
+You can also check formatting with Rubocop:
+```
+rubocop
+```
+<br/>
